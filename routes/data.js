@@ -6,7 +6,7 @@ const router = Router();
 
 // Controllers
 const data = require("../controllers/task2");
-const add = require("../controllers/taskk3")
+const add = require("../controllers/task3")
 
 // Routes
 

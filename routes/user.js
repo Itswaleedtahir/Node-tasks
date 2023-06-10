@@ -5,7 +5,7 @@ const router = Router();
 const auth = require("../middleware/auth")
 
 // Controllers
-const controller = require("../controllers/user");
+const controller = require("../controllers/task1");
 
 // Routes
 
