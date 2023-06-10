@@ -7,12 +7,11 @@ const express = require('express');
 const jwt = require("jsonwebtoken");
 const app = express();
 
-// Set up session middleware
 app.use(session({
   secret:config.get("jwt_secret") ,
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false }, // Adjust this according to your needs
+  cookie: { secure: false }, 
 }));
 module.exports = {
   login: async (req, res) => {
