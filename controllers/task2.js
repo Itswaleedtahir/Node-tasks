@@ -47,7 +47,6 @@ module.exports = {
           const worksheet = xlsx.utils.json_to_sheet(stockData, { header: ['sku', 'stock_ids'] });
           xlsx.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
       
-          // Save workbook
           const outputPath = 'D:/Practice/Node-tasks/sample2.xlsx'; 
           xlsx.writeFile(workbook, outputPath);
       
