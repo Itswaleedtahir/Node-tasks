@@ -1,0 +1,22 @@
+1. Select all records from Table 1 and a column to show count of their records in Table 2:
+
+SELECT p.id, p.name, COUNT(a.id) AS addressCount
+FROM peoples p
+LEFT JOIN addresses a ON p.id = a.personId
+GROUP BY p.id, p.name;
+
+
+2.Select all records from Table 1 whose record does not exist in Table 2:
+
+SELECT p.id, p.name
+FROM peoples p
+LEFT JOIN addresses a ON p.id = a.personId
+WHERE a.id IS NULL;
+
+
+3. Select all duplicate records in Table 2 and show a counter of their iteration in that table:
+
+SELECT a.address, COUNT(*) AS iterationCount
+FROM addresses a
+GROUP BY a.address
+HAVING COUNT(*) > 1;
