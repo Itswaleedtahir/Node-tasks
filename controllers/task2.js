@@ -18,8 +18,8 @@ module.exports = {
               }));
       
               await Stocks.bulkCreate(stockData, {
-                fields: ['sku', 'stock_ids'], // Specify the fields to insert
-                validate: true, // Perform validation
+                fields: ['sku', 'stock_ids'],
+                validate: true,
               });
       
               res.send('Import successful');
@@ -48,7 +48,7 @@ module.exports = {
           xlsx.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
       
           // Save workbook
-          const outputPath = 'D:/Practice/Node Tasks/sample2.xlsx'; 
+          const outputPath = 'D:/Practice/Node-tasks/sample2.xlsx'; 
           xlsx.writeFile(workbook, outputPath);
       
           res.send('Sample 2 file generated successfully');
