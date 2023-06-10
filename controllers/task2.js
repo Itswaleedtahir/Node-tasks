@@ -19,7 +19,7 @@ module.exports = {
       
               await Stocks.bulkCreate(stockData, {
                 fields: ['sku', 'stock_ids'],
-                validate: true,
+                validate: true, 
               });
       
               res.send('Import successful');
@@ -46,7 +46,7 @@ module.exports = {
           const workbook = xlsx.utils.book_new();
           const worksheet = xlsx.utils.json_to_sheet(stockData, { header: ['sku', 'stock_ids'] });
           xlsx.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
-      
+  
           const outputPath = 'D:/Practice/Node-tasks/sample2.xlsx'; 
           xlsx.writeFile(workbook, outputPath);
       
