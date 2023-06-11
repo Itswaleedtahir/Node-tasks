@@ -2,17 +2,9 @@ const config = require("../config");
 const { Users } = require("../models");
 const { generateErrorInstance } = require("../utils");
 const bcrypt = require("bcryptjs");
-const session = require('express-session');
-const express = require('express');
-const jwt = require("jsonwebtoken");
-const app = express();
 
-app.use(session({
-  secret:config.get("jwt_secret") ,
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false }, 
-}));
+const jwt = require("jsonwebtoken");
+
 module.exports = {
   login: async (req, res) => {
 
