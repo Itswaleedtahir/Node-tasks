@@ -1,7 +1,16 @@
 const express = require("express");
+const config = require("../config");
 const expressLogger = require("express-bunyan-logger");
 const cors = require("cors");
 const router = require("./routes");
+const session = require('express-session');
+
+app.use(session({
+  secret:config.get("jwt_secret") ,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }, 
+}));
 
 require("./models");
 
